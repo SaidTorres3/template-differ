@@ -1,0 +1,16 @@
+Simple test
+Testing if the docxToString Works with this file.
+
+
+
+In this example, we need to color the words and change styles and see if the text is printed correctly.
+
+
+
+And also count the enters and spaces   <- 3 spaces…
+
+
+123 456 789 0
+!@#$%^&*()_
+
+TEST

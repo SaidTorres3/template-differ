@@ -1,0 +1,31 @@
+{
+  "name": "template-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "exp.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc -w",
+    "start": "ts-node-dev src/index.ts --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "diff": "^5.0.0",
+    "jsdom": "^18.1.1",
+    "jszip": "^3.7.1",
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "@types/diff": "^5.0.1",
+    "@types/jest": "^27.0.3",
+    "@types/jsdom": "^16.2.13",
+    "@types/node": "^16.11.9",
+    "@types/xml2js": "^0.4.9",
+    "jest": "^27.3.1",
+    "ts-jest": "^27.0.7",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.2"
+  }
+}
