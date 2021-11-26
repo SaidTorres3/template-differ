@@ -1,0 +1,111 @@
+{
+  "documento": {
+    "instrumento": 83407,
+    "libro": 15,
+    "tomo": 1,
+    "folioInicial": 28801,
+    "folioFinal": 20802,
+    "fecha": "2020-11-30T17:19:02.525Z"
+  },
+  "notaria": {
+    "notario": "Licenciado Marco Antonio Meza Echevarria",
+    "numero": 34,
+    "demarcacion": "primera",
+    "lugar": {
+      "localidad": "Nuevo Vallarta",
+      "municipio": "Bahía de Banderas",
+      "estado": "Nayarit"
+    }
+  },
+  "partes": {
+    "testador": {
+      "nombre": "Jose Joaquin Sepúlveda Grajales",
+      "sexo": "H",
+      "curp": "SEGJ740808HVZPRQ00",
+      "ocupacion": "Abogado",
+      "donadorOrganos": true,
+      "casado": true,
+      "nacimiento": {
+        "fecha": "1974-09-08T06:00:00.000Z",
+        "lugar": {
+          "localidad": "Veracruz",
+          "municipio": "Veracruz",
+          "estado": "Veracruz"
+        }
+      },
+      "identificacion": {
+        "numero": "0090005641224",
+        "tipo": "Credencial de Elector",
+        "expide": "Instituto Nacional Electoral"
+      },
+      "domicilio": {
+        "calle": "Valle de los Henares",
+        "numero": 100,
+        "colonia": "Fraccionamiento Valle Dorado",
+        "localidad": "Nuevo Vallarta",
+        "municipio": "Bahía de Banderas",
+        "estado": "Nayarit"
+      }
+    }
+  },
+  "padre": {
+    "existe": true,
+    "nombre": "Víctor Manuel Sepúlveda Sánchez",
+    "vivo": false
+  },
+  "madre": {
+    "existe": true,
+    "nombre": "Irma Guadalupe Grajales Martínez",
+    "vivo": true
+  },
+  "matrimonios": [
+    {
+      "nombre": "Arisbe Hernández Munguía",
+      "sexo": "M",
+      "regimen": "Sociedad Conyugal",
+      "vivo": true,
+      "actual": true,
+      "acta": {
+        "presente": false
+      },
+      "hijos": [
+        {
+          "nombre": "Zaira Analí Sepúlveda Hernández",
+          "sexo": "M",
+          "vivo": true
+        },
+        {
+          "nombre": "Alondra Alejandra Sepúlveda Hernández",
+          "sexo": "M",
+          "vivo": true
+        }
+      ]
+    }
+  ],
+  "herederos": [
+    {
+      "nombre": "Zaira Analí Sepúlveda Hernández",
+      "sexo": "M",
+      "porcentaje": 50
+    },
+    {
+      "nombre": "Alondra Alejandra Sepúlveda Hernández",
+      "sexo": "M",
+      "porcentaje": 50
+    }
+  ],
+  "albaceas": [
+    {
+      "nombre": "Arisbe Hernández Munguía",
+      "sexo": "M"
+    },
+    {
+      "nombre": "Zaira Analí Sepúlveda Hernández",
+      "sexo": "M"
+    },
+    {
+      "nombre": "Alondra Alejandra Sepúlveda Hernández",
+      "sexo": "M"
+    }
+  ]
+}

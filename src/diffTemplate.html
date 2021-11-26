@@ -6,46 +6,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <style>
+    .global {
+      color: #000;
+    }
+
     .columns-container {
       display: flex;
       flex-direction: row;
     }
 
     .column {
-      flex: 1;
-      width: 100%;
       padding: 10px;
-      color: #000
+    }
+
+    .data {
+      white-space: break-spaces;
+      column-count: 3;
     }
   </style>
-  <script>
-    let isDarkMode = false;
-    function changeBackgroundColor() {
-      if (!isDarkMode) {
-        document.body.style.backgroundColor = '#000';
-        isDarkMode = true;
-        // change the text color of column class
-        document.querySelectorAll('.column').forEach(function (element) {
-          element.style.color = '#fff';
-        });
-      } else {
-        document.body.style.backgroundColor = '#fff';
-        isDarkMode = false;
-        document.querySelectorAll('.column').forEach(function (element) {
-          element.style.color = '#000';
-        });
-      }
-    }
-  </script>
   <title>Document</title>
 </head>
 
 <body>
-  <button onclick="changeBackgroundColor()">Change background color</button>
-  <div class="columns-container">
-    <div class="column" id="output"></div>
-    <div class="column" id="template"></div>
+  <div id="global" class="global">
+    <div>
+      <button onclick="changeBackgroundColor()">Change background color</button>
+      <button onclick="showEnters()">Show enters</button>
+      <span id="time-stamp">Generated at: </span>
+    </div>
+    <div id="columns-container" class="columns-container">
+      <div class="column" id="output"></div>
+      <div class="column" id="template"></div>
+    </div>
+    <div class="data" id="data-shower"></div>
   </div>
+  <script>
+    let isDarkMode = false;
+    let isShowingEnters = false;
+    const body = document.body;
+    const globalElement = document.getElementById('global');
+
+    const generatedAtElement = document.getElementById('time-stamp');
+    generatedAtElement.innerHTML += new Date().toLocaleString();
+
+    function changeBackgroundColor() {
+      if (!isDarkMode) {
+        isDarkMode = true;
+        body.style.backgroundColor = '#000';
+        globalElement.style.color = '#fff';
+
+      } else {
+        isDarkMode = false;
+        body.style.backgroundColor = '#fff';
+        globalElement.style.color = '#000';
+      }
+    }
+
+    function showEnters() {
+      const columnsConteiner = document.getElementById('columns-container');
+      if (!isShowingEnters) {
+        columnsConteiner.style.whiteSpace = 'pre-wrap';
+        isShowingEnters = true;
+      } else {
+        columnsConteiner.style.whiteSpace = 'normal';
+        isShowingEnters = false;
+      }
+    }
+  </script>
 </body>
 
 </html>
