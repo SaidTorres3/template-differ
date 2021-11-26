@@ -19,9 +19,13 @@ export const docxToString = async (filePath: string): Promise<string> => {
           let docxInTxt: string = ''
 
           paragraphs.forEach((paragraph: { [x: string]: { [x: string]: any[]; }[]; }) => {
-            const WRLabel = paragraph['w:r']
-            if (!WRLabel || !WRLabel.length) return
             let textInTheParagraph: string = '';
+            const saveTheParagraph = () => {
+              textInTheParagraph += '\r\n'
+              docxInTxt += textInTheParagraph
+            }
+            const WRLabel = paragraph['w:r']
+            if (!WRLabel || !WRLabel.length) { saveTheParagraph(); return }
             WRLabel.forEach((WR: { [x: string]: any[]; }) => {
               let text: string = '';
               const WTLabel = WR['w:t']
@@ -39,8 +43,7 @@ export const docxToString = async (filePath: string): Promise<string> => {
               }
               textInTheParagraph += text
             })
-            textInTheParagraph += '\n'
-            docxInTxt += textInTheParagraph
+            saveTheParagraph()
           })
 
           resolve(docxInTxt)
