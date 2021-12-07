@@ -5,7 +5,6 @@ export interface Phrase {
   sentenseIndex: number
 }
 
-
 export interface EditableObjectToDocxOpts {
   modifiedObjects: Phrase[]
   fileInPath: string,
@@ -15,4 +14,11 @@ export interface EditableObjectToDocxOpts {
 export interface PhraseCoords {
   paragraphIndex: number,
   sentenseIndex: number
+}
+
+export interface CreateTemplateOutputDiffVisualizerOpts {
+  templatePath: string,
+  templateOutputPath: string,
+  dataPath: string | undefined,
+  savePath: string,
 }

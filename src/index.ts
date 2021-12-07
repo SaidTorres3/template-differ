@@ -1,10 +1,15 @@
 import { createDiffVisualizer } from "./diffVisualizer/createDiffVisualizer";
 import { compareTwoDocx } from "./diffGenerator/compareTwoDocx";
+import { CreateTemplateOutputDiffVisualizerOpts } from "./types";
+export { docxToEditableObjects } from "./docxParser/docxToEditableObjects";
+export { editableObjectToDocx } from "./docxParser/editableObjectToDocx";
 
-compareTwoDocx("src/out.docx", "src/template.docx").then(diff => {
-  createDiffVisualizer({
-    diff,
-    savePath: 'src/diffVisualizer.html',
-    dataPath: 'src/data.json'
+export const createTemplateOutputDiffVisualizer = (opts: CreateTemplateOutputDiffVisualizerOpts) => {
+  compareTwoDocx(opts.templatePath, opts.templateOutputPath).then(diff => {
+    createDiffVisualizer({
+      diff,
+      savePath: opts.savePath,
+      dataPath: opts.dataPath
+    })
   })
-})
+}

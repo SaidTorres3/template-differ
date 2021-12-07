@@ -1,5 +1,5 @@
 import { readFileSync, writeFileSync } from "fs"
-import { docxToEditableObjects } from "../docxParser/docxToEditableObject"
+import { docxToEditableObjects } from "../docxParser/docxToEditableObjects"
 import { editableObjectToDocx } from "../docxParser/editableObjectToDocx"
 import { JSDOM } from "jsdom";
 import { Phrase } from "../types";
