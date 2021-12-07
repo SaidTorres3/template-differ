@@ -8,9 +8,9 @@ export const createDiffVisualizer = (opts: { diff: Change[], savePath: string, d
   let outputPart = ''; let templatePart = '';
   opts.diff.forEach((change) => {
     if (change.added) {
-      outputPart += `<span style="color:green">${change.value}</span>`
+      outputPart += `<span class="addedElement">${change.value}</span>`
     } else if (change.removed) {
-      templatePart += `<span style="color:red">${change.value}</span>`
+      templatePart += `<span class="deletedElement">${change.value}</span>`
     } else {
       outputPart += `<span>${change.value}</span>`
       templatePart += `<span>${change.value}</span>`
@@ -26,7 +26,7 @@ export const createDiffVisualizer = (opts: { diff: Change[], savePath: string, d
       if (object instanceof Object) {
         Object.entries(object).forEach(([key, value]) => addDataToHTML(value, `${path}.${key}`))
       } else {
-        if (dataShowerElement) dataShowerElement.innerHTML += (path + ": " + object + `\r\n`)
+        if (dataShowerElement) dataShowerElement.innerHTML += `<span>${(path + ": " + object + '\r\n')}</span>`
       }
     }
     addDataToHTML(data, 'data')

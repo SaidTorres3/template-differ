@@ -15,6 +15,14 @@
       flex-direction: row;
     }
 
+    .addedElement {
+      background-color: #00ff00cc;
+    }
+
+    .deletedElement {
+      background-color: #ff0000;
+    }
+
     .column {
       padding: 10px;
     }
@@ -22,6 +30,31 @@
     .data {
       white-space: break-spaces;
       column-count: 3;
+    }
+
+    /* .highlight {
+      color: #331cd0;
+    } */
+
+    /* Animation that glows text */
+    .highlight {
+      text-align: center;
+      animation-name: glow;
+      animation-duration: 5s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes glow {
+      0% {
+        color: #4d9aff;
+      }
+      50% {
+        color: #5845d1;
+      }
+      100% {
+        color: #4d9aff;
+      }
     }
   </style>
   <title>Document</title>
@@ -54,7 +87,6 @@
         isDarkMode = true;
         body.style.backgroundColor = '#000';
         globalElement.style.color = '#fff';
-
       } else {
         isDarkMode = false;
         body.style.backgroundColor = '#fff';
@@ -72,6 +104,27 @@
         isShowingEnters = false;
       }
     }
+
+    const debounce = (func, wait) => {
+      let timeout;
+      return (...args) => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+      };
+    };
+
+    const spans = document.querySelectorAll('span');
+    document.addEventListener('click', (e) => {
+      const selectedText = e.target.innerText;
+      spans.forEach(span => {
+        if (span.innerText.includes(selectedText)) {
+          span.classList.add('highlight');
+        } else {
+          span.classList.remove('highlight');
+        }
+      });
+    });
+
   </script>
 </body>
 

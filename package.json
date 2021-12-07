@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "build": "tsc -w",
-    "start": "ts-node-dev src/index.ts --watch"
+    "start": "ts-node-dev src/index.ts --watch",
+    "template": "ts-node-dev src/docxTemplateEditor/docxTemplateEditor.ts"
   },
   "keywords": [],
   "author": "",
