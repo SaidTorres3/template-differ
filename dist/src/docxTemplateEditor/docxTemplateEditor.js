@@ -37,7 +37,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var fs_1 = require("fs");
-var docxToEditableObject_1 = require("../docxParser/docxToEditableObject");
+var docxToEditableObjects_1 = require("../docxParser/docxToEditableObjects");
 var jsdom_1 = require("jsdom");
 // const ñ = {
 //   value: ', se dio NADA, ESTO SE HA MODIFICADO CORRECTAMENTE',
@@ -56,7 +56,7 @@ var createTemplateEditor = function () { return __awaiter(void 0, void 0, void 0
     var editableObjects, html, dom, labels, textElement, templateEditor;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, (0, docxToEditableObject_1.docxToEditableObjects)("src/template.docx")];
+            case 0: return [4 /*yield*/, (0, docxToEditableObjects_1.docxToEditableObjects)("src/template.docx")];
             case 1:
                 editableObjects = _a.sent();
                 html = (0, fs_1.readFileSync)('src/docxTemplateEditor/templateEditor.html', 'utf8');
