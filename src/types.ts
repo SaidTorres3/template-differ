@@ -7,8 +7,7 @@ export interface Phrase {
 
 export interface EditableObjectToDocxOpts {
   modifiedObjects: Phrase[]
-  fileInPath: string,
-  fileOutPath: string
+  fileIn: Buffer,
 }
 
 export interface PhraseCoords {
@@ -17,8 +16,7 @@ export interface PhraseCoords {
 }
 
 export interface CreateTemplateOutputDiffVisualizerOpts {
-  templatePath: string,
-  templateOutputPath: string,
-  dataPath: string | undefined,
-  savePath: string,
+  template: Buffer,
+  output: Buffer,
+  data: JSON|undefined,
 }
